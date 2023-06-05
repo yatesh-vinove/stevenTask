@@ -1,3 +1,14 @@
+import {
+  Email,
+  Banners,
+  Programmatic,
+  CustomMedia,
+  EndemicSocial,
+  SMS,
+  DirectMail,
+  EHR,
+} from "../../../assets/icons";
+
 export const RIGHT_SIDE_CHART_SERIES = [
   {
     name: "Personal Promotion",
@@ -37,6 +48,7 @@ export const RIGHT_SIDE_CHART_OPTIONS = {
   },
   xaxis: {
     categories: ["1st Preference", "2nd Preference", "3rd Preference"],
+    style: {},
   },
   legend: {
     show: false,
@@ -68,8 +80,6 @@ export const LEFT_SIDE_CHART_OPTIONS = {
   plotOptions: {
     bar: {
       horizontal: true,
-      //   barWidth: "30%",
-      //   barHeight: "30%",
       dataLabels: {
         enabled: true,
         formatter: function (val, opt) {
@@ -104,4 +114,15 @@ export const LEGENDS = [
     data: [23, 29, 18],
     color: "#F3DBF1",
   },
+];
+
+export const BAR_CHART_LEGENDS = [
+  { label: "E-mail", icon: <Email /> },
+  { label: "Banners", icon: <Banners /> },
+  { label: "Programmatic", icon: <Programmatic /> },
+  { label: "Custom media", icon: <CustomMedia /> },
+  { label: "Endemic social", icon: <EndemicSocial /> },
+  { label: "SMS", icon: <SMS /> },
+  { label: "Direct mail", icon: <DirectMail /> },
+  { label: "EHR", icon: <EHR /> },
 ];

@@ -48,7 +48,7 @@ export default function Header(props) {
           variant="h5"
           noWrap
           component="div"
-          sx={{ color: "#101828" }}
+          sx={{ color: "#101828", marginLeft: "24px" }}
         >
           Affinity Hub
         </Typography>

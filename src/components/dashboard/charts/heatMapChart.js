@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import React from "react";
 import Chart from "react-apexcharts";
+import PieChart from "../../../assets/pieChart.png";
+import Square from "../../../assets/square.png";
 
 const HeatMapChart = (props) => {
   const { chartName, colors } = props;
@@ -8,7 +10,30 @@ const HeatMapChart = (props) => {
     chart: {
       type: "heatmap",
       toolbar: {
-        show: false,
+        show: true,
+        tools: {
+          download: false,
+          selection: false,
+          zoom: false,
+          zoomin: false,
+          zoomout: false,
+          pan: false,
+          reset: false,
+          customIcons: [
+            {
+              icon: `<img src=${PieChart} height="20" />`,
+              click: function (chart, options, e) {
+                console.log("clicked square custom-icon");
+              },
+            },
+            {
+              icon: `<img src=${Square} height="20" />`,
+              click: function (chart, options, e) {
+                console.log("clicked  piechart ");
+              },
+            },
+          ],
+        },
       },
       animations: {
         enabled: false,
@@ -142,7 +167,7 @@ const HeatMapChart = (props) => {
   ];
 
   return (
-    <Box sx={{ minWidth: "350px", minHeight: "400px" }}>
+    <Box xs={4}>
       <Chart
         options={options}
         series={series}

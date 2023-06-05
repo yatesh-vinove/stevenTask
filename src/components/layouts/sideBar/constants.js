@@ -34,9 +34,6 @@ export const MENU_ITEMS = [
     icon: <Database />,
     outlinedIcon: <Database color="#AD509E" />,
   },
-];
-
-export const SECOND_MENU = [
   {
     value: "Settings",
     icon: <Settings />,

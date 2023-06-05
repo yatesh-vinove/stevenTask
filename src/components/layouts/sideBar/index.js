@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import Divider from "@mui/material/Divider";
+import { Box, Divider } from "@mui/material";
 import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -8,7 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import IconButton from "@mui/material/IconButton";
-import { MENU_ITEMS, DRAWER_WIDTH, SECOND_MENU } from "./constants";
+import { MENU_ITEMS, DRAWER_WIDTH } from "./constants";
 import Logo from "../../../assets/logo.png";
 import { Hamburger } from "../../../assets/icons";
 
@@ -75,81 +75,59 @@ export default function SideBar(props) {
       </DrawerHeader>
       <Divider />
       <List>
-        {MENU_ITEMS.map((menuItem, index) => (
-          <ListItem
-            key={menuItem.value}
-            disablePadding
-            sx={{
-              background: activeOption === index ? "#FAEDF9" : "transparent",
-              display: "block",
-            }}
-          >
-            <ListItemButton
+        {MENU_ITEMS.map((menuItem, index) => {
+          return (
+            <ListItem
+              key={menuItem.value}
+              disablePadding
               sx={{
-                minHeight: 48,
-                justifyContent: drawerOpen ? "initial" : "center",
-                px: 2.5,
+                background: activeOption === index ? "#FAEDF9" : "transparent",
+                display: "block",
               }}
-              onClick={() => setActiveOption(index)}
             >
-              <ListItemIcon
+              <ListItemButton
                 sx={{
-                  minWidth: 0,
-                  mr: drawerOpen ? 3 : "auto",
-                  justifyContent: "center",
+                  minHeight: 48,
+                  justifyContent: drawerOpen ? "initial" : "center",
+                  px: 2.5,
                 }}
+                onClick={() => setActiveOption(index)}
               >
-                {activeOption === index ? menuItem.outlinedIcon : menuItem.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={menuItem.value}
-                sx={{
-                  color: activeOption === index ? "#AD509E" : "#344054",
-                  opacity: drawerOpen ? 1 : 0,
-                }}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {SECOND_MENU.map((menuItem, index) => (
-          <ListItem
-            key={menuItem.value}
-            disablePadding
-            sx={{
-              background: activeOption === index ? "#FAEDF9" : "transparent",
-              display: "block",
-            }}
-          >
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: drawerOpen ? "initial" : "center",
-                px: 2.5,
-              }}
-              onClick={() => setActiveOption(index)}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: drawerOpen ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                {activeOption === index ? menuItem.outlinedIcon : menuItem.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={menuItem.value}
-                sx={{
-                  color: activeOption === index ? "#AD509E" : "#344054",
-                  opacity: drawerOpen ? 1 : 0,
-                }}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: drawerOpen ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  {activeOption === index
+                    ? menuItem.outlinedIcon
+                    : menuItem.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={menuItem.value}
+                  sx={{
+                    color: activeOption === index ? "#AD509E" : "#344054",
+                    opacity: drawerOpen ? 1 : 0,
+                    fontFamily: "inter",
+                    fontWeight: "500",
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                  }}
+                />
+              </ListItemButton>
+              {index === 4 && (
+                <Box
+                  sx={{
+                    marginTop: "32px",
+                    marginBottom: "32px",
+                    border: "1px solid #E4E7EC",
+                  }}
+                />
+              )}
+            </ListItem>
+          );
+        })}
       </List>
     </Drawer>
   );

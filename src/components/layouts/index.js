@@ -6,15 +6,6 @@ import Header from "./header";
 import SideBar from "./sideBar";
 import Dashboard from "../dashboard";
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "flex-end",
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-}));
-
 export default function Layout() {
   const [open, setOpen] = React.useState(false);
 
@@ -45,3 +36,12 @@ export default function Layout() {
     </Box>
   );
 }
+
+const DrawerHeader = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-end",
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+}));

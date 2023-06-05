@@ -1,5 +1,4 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
 import Chart from "react-apexcharts";
 
 const BarChart = () => {
@@ -14,7 +13,14 @@ const BarChart = () => {
         bar: {
           horizontal: false,
           distributed: true,
+          dataLabels: {
+            position: "top",
+          },
         },
+      },
+      dataLabels: {
+        enabled: true,
+        textAnchor: "middle",
       },
       colors: [
         "#FD853A",
@@ -28,12 +34,14 @@ const BarChart = () => {
       ],
       legend: {
         show: false,
-        // position: "right",
       },
       grid: {
         show: false,
       },
       xaxis: {
+        title: {
+          text: "Month",
+        },
         categories: [
           "E-mail",
           "Banners",
@@ -44,6 +52,11 @@ const BarChart = () => {
           "Direct mail",
           "EHR",
         ],
+      },
+      yaxis: {
+        title: {
+          text: "Total patients",
+        },
       },
     },
   };
@@ -63,14 +76,12 @@ const BarChart = () => {
   ];
 
   return (
-    <Grid  sx={{ border: "1px solid #E4E7EC", borderRadius: "10px" }}>
-        <Chart
-          options={chartData.options}
-          series={series}
-          type="bar"
-          height={300}
-        />
-    </Grid>
+    <Chart
+      options={chartData.options}
+      series={series}
+      type="bar"
+      height={300}
+    />
   );
 };
 
