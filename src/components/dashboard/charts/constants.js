@@ -50,6 +50,9 @@ export const RIGHT_SIDE_CHART_OPTIONS = {
     categories: ["1st Preference", "2nd Preference", "3rd Preference"],
     style: {},
   },
+  yaxis:{
+    categories: ["0", "20", "40", "60", "80", "100"],
+  },
   legend: {
     show: false,
   },
@@ -92,6 +95,7 @@ export const LEFT_SIDE_CHART_OPTIONS = {
     categories: ["", "", ""],
   },
   yaxis: {
+    categories: ["0", "20", "40", "60", "80", "100"],
     reversed: true,
   },
   legend: {

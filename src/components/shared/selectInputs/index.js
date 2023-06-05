@@ -1,46 +1,13 @@
 import * as React from "react";
-import { Theme, useTheme } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
-
-const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
-];
-
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
+const names = [""];
 
 export default function BasicSelect({ filter }) {
-  const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 
   const handleChange = (event) => {
@@ -54,34 +21,60 @@ export default function BasicSelect({ filter }) {
   };
 
   return (
-    <FormControl xs={12} lg={3} sx={{ m: 1, mt: 3 }}>
+    <FormControl xs={12} lg={3} sx={{}}>
       <Select
-        sx={{ borderRadius: "50px" }}
+        size={"small"}
+        sx={{
+          borderRadius: "20px",
+          paddingLeft: "16px",
+          paddingRight: "16px",
+          "& .MuiSelect-select": {
+            paddingRight: "0px !important",
+          },
+        }}
         multiple
         displayEmpty
         value={personName}
         onChange={handleChange}
-        input={<OutlinedInput  />}
-        // IconComponent={<KeyboardArrowDownIcon variant="filled" />}
+        input={<OutlinedInput />}
+        IconComponent={() => filter.id ===1 ? filter.icon : <KeyboardArrowDownIcon />}
         renderValue={(selected) => {
           if (selected.length === 0) {
-            return <em>{filter.label}</em>;
+            return (
+              <em
+                style={{
+                  color: "#344054",
+                  fontFamily: "inter",
+                  fontWeight: "500",
+                  fontSize: "14px",
+                  lineHeight: "20px",
+                  paddingRight: "13px"
+                }}
+              >
+                {filter.label}
+              </em>
+            );
           }
 
           return selected.join(", ");
         }}
-        MenuProps={MenuProps}
         inputProps={{ "aria-label": "Without label" }}
       >
         <MenuItem disabled value="">
-          <em>{filter.label}</em>
+          <em
+            style={{
+              color: "#344054",
+              fontFamily: "inter",
+              fontWeight: "500",
+              fontSize: "14px",
+              lineHeight: "20px",
+            }}
+          >
+            {filter.label}
+          </em>
         </MenuItem>
         {names.map((name) => (
-          <MenuItem
-            key={name}
-            value={name}
-            style={getStyles(name, personName, theme)}
-          >
+          <MenuItem key={name} value={name} style={{}}>
             {name}
           </MenuItem>
         ))}

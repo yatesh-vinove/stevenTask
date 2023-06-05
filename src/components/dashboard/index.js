@@ -8,15 +8,14 @@ import DigitalVsNonDigitalAffinity from "./digitalVsNonDigitalAffinity";
 
 function Dashboard() {
   return (
-    <Grid
-      sx={{ paddingLeft: "32px", paddingRight: "32px", paddingTop: "32px" }}
-    >
+    <Grid>
       {/* Filters */}
       <Grid container>
         {FILTER.map((item) => {
           return (
-           
+            <Box sx={{ marginRight: "16px" }}>
               <BasicSelect filter={item} />
+            </Box>
           );
         })}
       </Grid>
@@ -34,13 +33,13 @@ function Dashboard() {
       </Typography> */}
 
       {/* Heat Map Chart */}
-      <HeatMapAffinity/>
+      <HeatMapAffinity />
 
       {/* Digital vs non-digital Affinity */}
       <DigitalVsNonDigitalAffinity />
 
       {/* Digital Channel Affiniy */}
-      <DigitalChannelAffinity/>
+      <DigitalChannelAffinity />
     </Grid>
   );
 }

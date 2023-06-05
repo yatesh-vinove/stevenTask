@@ -12,6 +12,7 @@ export default function DigitalChannelAffinity() {
         xs={12}
         sx={{ borderBottom: "1px solid  #E4E7EC", padding: "24px" }}
       >
+       <Box sx={{display:"flex"}}>
         <Typography
           sx={{
             color: "#101828",
@@ -23,6 +24,21 @@ export default function DigitalChannelAffinity() {
         >
           Digital Channel Affinity
         </Typography>
+        <Box className="pieChartCustomIcon" sx={{marginLeft:"auto", height:"40px",  color: "#1D2939",
+            fontFamily: "inter",
+            fontWeight: "500",
+            fontSize: "14px",
+            lineHeight: "20px",}}>
+          %
+        </Box>
+        <Box className="notificationCustomIcon" sx={{height:"40px",  color: "#1D2939",
+            fontFamily: "inter",
+            fontWeight: "500",
+            fontSize: "14px",
+            lineHeight: "20px",}}>
+          #
+        </Box>
+        </Box> 
         <Grid container sx={{}}>
           {["All", "1st Preference", "2nd Preference", "3rd Preference"].map(
             (item, index) => {
@@ -37,7 +53,7 @@ export default function DigitalChannelAffinity() {
                       lineHeight: "20px",
                       padding: "8px 12px",
                       borderRadius: "6px",
-                      boxShadow: index === preference && "0px 1px 3px #101828",
+                      boxShadow: index === preference ? "0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)" : "none",
                     }}
                   >
                     {item}

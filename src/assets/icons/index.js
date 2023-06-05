@@ -18,6 +18,7 @@ import { ReactComponent as DirectMail } from "./directMailCheckBox.svg";
 import { ReactComponent as EHR } from "./ehrCheckBox.svg";
 import { ReactComponent as Square } from "./notification.svg";
 import { ReactComponent as PieChart } from "./pieChart.svg";
+import { ReactComponent as State } from "./state.svg";
 
 export {
   BarChart,
@@ -39,5 +40,6 @@ export {
   DirectMail,
   EHR,
   Square,
-  PieChart
+  PieChart,
+  State
 };

@@ -32,8 +32,10 @@ const AppBar = styled(MuiAppBar, {
 export default function Header(props) {
   const { openDrawer, drawerOpen, closeDrawer } = props;
   return (
-    <AppBar position="fixed" open={drawerOpen}>
-      <Toolbar sx={{ background: "#FFFFFF" }}>
+    <AppBar position="fixed" open={drawerOpen} sx={{ boxShadow: "none" }}>
+      <Toolbar
+        sx={{ background: "#FFFFFF", borderBottom: "1px solid #E4E7EC" }}
+      >
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -68,7 +70,7 @@ export default function Header(props) {
             <Notification />
           </Box>
           <Box sx={{ display: "flex", gap: "12px" }}>
-            <img src={Avatar} alt="user avatar" />
+            <img src={Avatar} alt="user avatar" width="40px" height="40px" />
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography sx={{ color: "#344054" }}>Kari Rasmussen</Typography>
               <Typography sx={{ color: "#667085" }}>

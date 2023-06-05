@@ -7,7 +7,7 @@ import SideBar from "./sideBar";
 import Dashboard from "../dashboard";
 
 export default function Layout() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -28,7 +28,7 @@ export default function Layout() {
       />
       {/* SideBar */}
       <SideBar closeDrawer={handleDrawerClose} drawerOpen={open} />
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, padding: '32px' }}>
         <DrawerHeader />
         {/* Contents */}
         <Dashboard />

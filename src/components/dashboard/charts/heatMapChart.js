@@ -21,13 +21,15 @@ const HeatMapChart = (props) => {
           reset: false,
           customIcons: [
             {
-              icon: `<img src=${PieChart} height="20" />`,
+              icon: `<img src=${PieChart} style="padding: 8px; width:30px; height: 30px"/>`,
+              class: "pieChartCustomIcon",
               click: function (chart, options, e) {
                 console.log("clicked square custom-icon");
               },
             },
             {
-              icon: `<img src=${Square} height="20" />`,
+              icon: `<img src=${Square} style="padding: 8px; width:30px; height: 30px" />`,
+              class: "notificationCustomIcon",
               click: function (chart, options, e) {
                 console.log("clicked  piechart ");
               },
@@ -49,7 +51,7 @@ const HeatMapChart = (props) => {
       style: {
         fontSize: "14px",
         fontWeight: "bold",
-        fontFamily: undefined,
+
         color: "#263238",
       },
     },

@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-family: "Inter", sans-serif !important;
+}
+
+.pieChartCustomIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px 0px 0px 8px;
+  padding: 12px;
+}
+.notificationCustomIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-width: 1px 1px 1px 0px;
+  border-style: solid;
+  border-color: #d0d5dd;
+  border-radius: 0px 8px 8px 0px;
+  padding: 12px;
+}
