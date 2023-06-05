@@ -22,11 +22,10 @@ export default function DigitalVsNonDigitalAffinity() {
         <Typography
           sx={{
             color: "#101828",
-            fontFamily: "inter",
             fontWeight: "600",
             fontSize: "18px",
             lineHeight: "28px",
-            fontStyle: "normal",
+            fontStyle: "normal",textAlign:'left'
           }}
         >
           Digital vs non-digital Affinity
@@ -38,7 +37,7 @@ export default function DigitalVsNonDigitalAffinity() {
             fontWeight: "400",
             fontSize: "14px",
             lineHeight: "20px",
-            fontStyle: "normal",
+            fontStyle: "normal",textAlign:'left'
           }}
         >
           %, In percents

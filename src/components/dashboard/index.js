@@ -9,7 +9,7 @@ import DigitalVsNonDigitalAffinity from "./digitalVsNonDigitalAffinity";
 function Dashboard() {
   return (
     <Grid
-      sx={{ paddingLeft: "32px", paddingRight: "32px", paddingTop: "32px" }}
+      sx={{ paddingLeft: "0px", paddingRight: "0px", paddingTop: "0px" }}
     >
       {/* Filters */}
       <Grid container>

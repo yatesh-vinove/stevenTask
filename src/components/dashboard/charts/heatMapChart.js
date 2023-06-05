@@ -48,9 +48,8 @@ const HeatMapChart = (props) => {
       floating: false,
       style: {
         fontSize: "14px",
-        fontWeight: "bold",
-        fontFamily: undefined,
-        color: "#263238",
+        fontWeight: "600",
+        color: "#101828",
       },
     },
     dataLabels: {
@@ -167,7 +166,7 @@ const HeatMapChart = (props) => {
   ];
 
   return (
-    <Box xs={4}>
+    <Box xs={4} sx={{ p: 3,width:'33%',borderRight:'1px solid #E4E7EC' }}>
       <Chart
         options={options}
         series={series}

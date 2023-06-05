@@ -6,7 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const ITEM_HEIGHT = 48;
+const ITEM_HEIGHT = 40;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
   PaperProps: {
@@ -54,9 +54,9 @@ export default function BasicSelect({ filter }) {
   };
 
   return (
-    <FormControl xs={12} lg={3} sx={{ m: 1, mt: 3 }}>
+    <FormControl xs={12} lg={3} sx={{ mr: 1.5, mt: 2 }}>
       <Select
-        sx={{ borderRadius: "50px" }}
+        sx={{ borderRadius: "20px",height:'40px',color:'#344054',fontSize:'14px',fontWeight:'500',fontStyle:'normal' }}
         multiple
         displayEmpty
         value={personName}
