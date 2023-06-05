@@ -12,6 +12,7 @@ const BarChart = () => {
       plotOptions: {
         bar: {
           horizontal: false,
+          borderRadius:4,
           distributed: true,
           dataLabels: {
             position: "top",

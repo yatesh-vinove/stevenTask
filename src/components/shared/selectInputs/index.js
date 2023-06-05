@@ -4,6 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Typography } from "@mui/material";
 
 const names = [""];
 
@@ -41,8 +42,8 @@ export default function BasicSelect({ filter }) {
         renderValue={(selected) => {
           if (selected.length === 0) {
             return (
-              <em
-                style={{
+              <Typography
+                sx={{
                   color: "#344054",
                   fontFamily: "inter",
                   fontWeight: "500",
@@ -52,7 +53,7 @@ export default function BasicSelect({ filter }) {
                 }}
               >
                 {filter.label}
-              </em>
+              </Typography>
             );
           }
 
@@ -73,7 +74,7 @@ export default function BasicSelect({ filter }) {
             {filter.label}
           </em>
         </MenuItem>
-        {names.map((name) => (
+        {filter.items && filter?.itemsArray.map((name) => (
           <MenuItem key={name} value={name} style={{}}>
             {name}
           </MenuItem>
