@@ -31,6 +31,7 @@ export default function BasicSelect({ filter }) {
           paddingRight: "16px",
           "& .MuiSelect-select": {
             paddingRight: "0px !important",
+            height:'40px',color:'#344054',fontSize:'14px',fontWeight:'500',fontStyle:'normal'
           },
         }}
         multiple

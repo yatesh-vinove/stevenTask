@@ -84,7 +84,7 @@ export default function DigitalVsNonDigitalAffinity() {
             fontWeight: "400",
             fontSize: "14px",
             lineHeight: "20px",
-            fontStyle: "normal",
+            fontStyle: "normal",textAlign:'left'
           }}
         >
           %, In percents

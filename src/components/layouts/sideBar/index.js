@@ -65,15 +65,15 @@ export default function SideBar(props) {
 
   return (
     <Drawer variant="permanent" open={drawerOpen}>
-      <DrawerHeader sx={{ justifyContent: "flex-start" }}>
-        <IconButton onClick={closeDrawer}>
+      <DrawerHeader sx={{ justifyContent: "flex-start",height:'72px' }}>
+        <IconButton onClick={closeDrawer} sx={{marginLeft: "10px"}}>
           <Hamburger />
         </IconButton>
-        <IconButton>
+        <IconButton sx={{marginLeft: "15px"}}>
           <img src={Logo} alt="brand logo" />
         </IconButton>
       </DrawerHeader>
-      <Divider />
+      <Divider sx={{ bgcolor: "#E4E7EC" }} />
       <List>
         {MENU_ITEMS.map((menuItem, index) => {
           return (
@@ -87,7 +87,7 @@ export default function SideBar(props) {
             >
               <ListItemButton
                 sx={{
-                  minHeight: 48,
+                  minHeight: 40,
                   justifyContent: drawerOpen ? "initial" : "center",
                   px: 2.5,
                 }}
@@ -109,7 +109,6 @@ export default function SideBar(props) {
                   sx={{
                     color: activeOption === index ? "#AD509E" : "#344054",
                     opacity: drawerOpen ? 1 : 0,
-                    fontFamily: "inter",
                     fontWeight: "500",
                     fontSize: "16px",
                     lineHeight: "24px",

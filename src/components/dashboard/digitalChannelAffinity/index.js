@@ -19,7 +19,7 @@ export default function DigitalChannelAffinity() {
             fontFamily: "inter",
             fontWeight: "600",
             fontSize: "18px",
-            lineHeight: "28px",
+            lineHeight: "28px",textAlign:'left',marginBottom:'20px'
           }}
         >
           Digital Channel Affinity

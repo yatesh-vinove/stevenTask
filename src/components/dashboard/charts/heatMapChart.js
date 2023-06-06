@@ -51,7 +51,6 @@ const HeatMapChart = (props) => {
       style: {
         fontSize: "14px",
         fontWeight: "bold",
-
         color: "#263238",
       },
     },

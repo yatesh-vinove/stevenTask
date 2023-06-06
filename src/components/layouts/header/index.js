@@ -1,7 +1,7 @@
 import React from "react";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { Box, IconButton, Typography, styled } from "@mui/material";
+import { Box, IconButton, Typography, styled, Divider } from "@mui/material";
 import { DRAWER_WIDTH } from "../sideBar/constants";
 import {
   BackButton,
@@ -32,9 +32,9 @@ const AppBar = styled(MuiAppBar, {
 export default function Header(props) {
   const { openDrawer, drawerOpen, closeDrawer } = props;
   return (
-    <AppBar position="fixed" open={drawerOpen} sx={{ boxShadow: "none" }}>
+    <AppBar elevation={0} position="fixed" open={drawerOpen} sx={{ boxShadow: "none" }}>
       <Toolbar
-        sx={{ background: "#FFFFFF", borderBottom: "1px solid #E4E7EC" }}
+        sx={{ background: "#FFFFFF", borderBottom: "1px solid #E4E7EC", height:'72px'  }}
       >
         <IconButton
           color="inherit"
@@ -50,7 +50,7 @@ export default function Header(props) {
           variant="h5"
           noWrap
           component="div"
-          sx={{ color: "#101828", marginLeft: "24px" }}
+          sx={{ color: "#101828", marginLeft: "17px",fontWeight:'500',fontSize:'30px' }}
         >
           Affinity Hub
         </Typography>
@@ -72,7 +72,7 @@ export default function Header(props) {
           <Box sx={{ display: "flex", gap: "12px" }}>
             <img src={Avatar} alt="user avatar" width="40px" height="40px" />
             <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <Typography sx={{ color: "#344054" }}>Kari Rasmussen</Typography>
+              <Typography sx={{ color: "#344054",textAlign:'left' }}>Kari Rasmussen</Typography>
               <Typography sx={{ color: "#667085" }}>
                 kari@pharmaforceiq.com
               </Typography>
@@ -80,6 +80,7 @@ export default function Header(props) {
           </Box>
         </Box>
       </Toolbar>
+      <Divider sx={{ bgcolor: "#E4E7EC" }} />
     </AppBar>
   );
 }
